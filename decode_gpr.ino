@@ -231,26 +231,6 @@ unsigned long checkPosition() {
               }
               //Serial.println(latitude);
               //Serial.println(longitude);
-              //for (int i=0;i<13;i++){
-              //  switch(i){
-              //    case 0 :Serial.print("Time in UTC (HhMmSs): ");break;
-              //    case 1 :Serial.print("Status (A=OK,V=KO): ");break;
-              //    case 2 :Serial.print("Latitude: ");break;
-              //    case 3 :Serial.print("Direction (N/S): ");break;
-              //    case 4 :Serial.print("Longitude: ");break;
-              //    case 5 :Serial.print("Direction (E/W): ");break;
-              //    case 6 :Serial.print("Velocity in knots: ");break;
-              //    case 7 :Serial.print("Heading in degrees: ");break;
-              //    case 8 :Serial.print("Date UTC (DdMmAa): ");break;
-              //    case 9 :Serial.print("Magnetic degrees: ");break;
-              //    case 10 :Serial.print("Variation (E/W): ");break;
-              //    case 11 :Serial.print("Mode: ");break;
-              //    case 12 :Serial.print("Checksum: ");break;
-              //  }
-              //  for (int j=indices[i];j<(indices[i+1]-1);j++){
-              //    Serial.print(linea[j+1]); 
-              //  }
-              //  Serial.println("");
               //Serial.println("On a une position valide on arrête la boucle d'acquisition");
               startLoop = false; // On arrête l'acquisition de données car les données sont transmises.
               //}
