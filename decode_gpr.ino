@@ -209,10 +209,17 @@ unsigned long checkPosition() {
               for (int k=indices[4];k<indices[5]-1;k++) {
                 Lon[k - l] = linea[k+1];
               }
-              // Conversion des char[] en float
-              msg.latitude = atof(Lat) / 100;
-              msg.longitude = atof(Lon) / 100;
+              // Conversion des char[] en float et conversion du format ddmm.mmmm en dd.mmmmmm
+              int idegLat = int(atof(Lat) /100);
+              float immmLat = (atof(Lat) - (idegLat * 100)) / 60;
+              float fLat = idegLat + immmLat;
+              int idegLon = int(atof(Lon) /100);
+              float immmLon = (atof(Lon) - (idegLon * 100)) / 60;
+              float fLon = idegLon + immmLon;
               
+              msg.latitude = fLat;
+              msg.longitude = fLon;
+             
               // Inverse le signe si on ne se trouve pas dans la partie Nord / Est
               msg.latitude = linea[indices[3] + 1] == 'N' ? msg.latitude : -msg.latitude;
               msg.longitude = linea[indices[5] + 1] == 'E' ? msg.longitude : -msg.longitude;
